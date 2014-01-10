@@ -1,7 +1,7 @@
 #!/bin/bash
 # script
 
-echo "deb ftp.us.debian.org/debian/ jessie main contrib" >> /etc/apt/sources.list &&
+echo "deb http://ftp.us.debian.org/debian/ jessie main contrib" >> /etc/apt/sources.list &&
 apt-get update &&
 apt-get dist-upgrade &&
 apt-get install sudo git &&
