@@ -1,4 +1,1 @@
-#!/bin/bash
-# script
-
-cd ~/Whonix
+Tests for days
