@@ -1,0 +1,30 @@
+#!/bin/bash
+# Update, upgrade, install and preparation Whonix script
+
+echo "deb http://ftp.us.debian.org/debian/ jessie main contrib" >> /etc/apt/sources.list &&
+apt-get update &&
+apt-get dist-upgrade -y  &&
+apt-get install sudo git -y &&
+addgroup user sudo  &&
+git clone https://github.com/adrelanos/Whonix &&
+cd Whonix
+clear
+git checkout 7.7.1.1
+echo "=============================================================="
+echo "What would you like to do?"
+echo ""
+echo "Build Whonix-Gateway virtual machine image	    --> Press 1 "
+echo "Build Whonix-Workstation virtual machine image      --> Press 2 "
+echo "Build Whonix-Gateway on hardware			    --> Press 3 "
+echo "Exit the build menu	                            --> Press 4 "
+echo ""
+echo "Choose one option and press Enter"
+echo "=============================================================="
+read n 
+case $n in
+     1)	~/Whonix/whonix_build --build --tor-gateway & echo "Building Whonix-Gateway virtual machine image";;
+     2)	~/Whonix/whonix_build --build --tor-workstation & echo "Building Whonix-Workstation virtual machine image";;
+     3) ~/Whonix/whonix_build --tor-gateway --bare-metal --build "Installing Whonix-Gateway on hardware";;
+     4)	exit & echo "Exiting the build menu";;
+     *) exit & echo "Exiting the build menu";;
+esac
