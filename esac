@@ -27,7 +27,3 @@ esac
 case $answer in 4)
 exit & echo "Exiting the build menu"
 esac
-
-case $answer in *)
-exit & echo "Exiting the build menu"
-esac
