@@ -1,4 +1,13 @@
 #!/bin/bash
+# Whonix build script
+
+# apt-get update
+# apt-get dist-upgrade -y
+
+git clone https://github.com/adrelanos/Whonix &&
+clear
+git -C "/home/user/Whonix" checkout 7.7.3
+
 echo "=============================================================="
 echo "What would you like to do?"
 echo ""
@@ -10,7 +19,6 @@ echo ""
 echo "Choose one option and press Enter"
 echo "=============================================================="
 read answer
-
 
 case $answer in 1)
 sudo ./Whonix/whonix_build --build --tor-gateway & echo "Building Whonix-Gateway virtual machine image"
