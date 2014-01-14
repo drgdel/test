@@ -5,7 +5,7 @@ echo ""
 echo "Build Whonix-Gateway virtual machine image	    --> Press 1 "
 echo "Build Whonix-Workstation virtual machine image    --> Press 2 "
 echo "Build Whonix-Gateway on hardware	--> Press 3 "
-echo "Exit the build menu	                            --> Press 4 "
+echo "Exit the build menu	                            --> Press 0 "
 echo ""
 echo "Choose one option and press Enter"
 echo "=============================================================="
@@ -24,6 +24,6 @@ case $answer in 3)
 sudo ./Whonix/whonix_build --tor-gateway --bare-metal --build & echo "Installing Whonix-Gateway on hardware"
 esac
 
-case $answer in 4)
+case $answer in 0)
 exit & echo "Exiting the build menu"
 esac
