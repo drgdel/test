@@ -1,6 +1,8 @@
 #!/bin/bash
 
-# No password required for sudo commands
+# Works if you are root but not as user
+
+# No password required for sudo commands. This could be refined just for the whonix build command
 echo "user ALL = NOPASSWD : ALL" >> /etc/sudoers
 
 # Deletes the 54th line from /etc/innittab - 
