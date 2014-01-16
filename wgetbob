@@ -1,2 +1,3 @@
 #!/bin/bash
-wget -O /home/user/bob https://raw.github.com/drgdel/test/master/test; in-target sh /home/user/bob
+wget -O /home/user/bob https://raw.github.com/drgdel/test/master/test;
+sh /home/user/bob
