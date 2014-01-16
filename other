@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# No password required for sudo commands
+echo "user ALL = NOPASSWD : ALL" >> /etc/sudoers
+
+# Deletes the 54th line from /etc/innittab - 
+sed -i '54d' /etc/inittab
+
+# Adds the autologin command 
+echo "1:2345:respawn:/bin/login -f user tty1 </dev/tty1 >/dev/tty1 2>&1" >> /etc/inittab
+
+reboot
